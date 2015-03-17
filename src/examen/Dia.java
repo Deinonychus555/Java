@@ -12,6 +12,9 @@ package examen;
 // Revisar como usar clases de copnstantes para crear un tipo numerado
 public final class Dia {
     
+    public final static String LUNES="Lunes";
+    public final static String MARTES="Lunes";
+    
     private String nombre;
     
     private Dia (String nombre){

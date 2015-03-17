@@ -66,6 +66,7 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.io.InvalidClassException;
 import java.lang.ClassNotFoundException;
+import java.util.SortedSet;
 
 
 
@@ -100,7 +101,19 @@ public class Examen {
     
     
     public static void main(String[] args) throws IOException {
-          // PRUEBA PERSONA
+         
+            /* //ligadura dinamica
+         Padre padre = new Hija();
+         padre.uno();
+         padre.dos();
+         padre.cuatro();
+         Hija hija = (Hija)padre;
+         hija.tres();
+         * 
+         * */ //ligadura dinamica
+
+
+        // PRUEBA PERSONA
          
         Persona[] individuos={new Profesor("Jesus",48,"matematicas"),new Alumno("Juan",37,"informatica"),new Profesor("Juampa",32,"java")};
         List <Persona> personas =new ArrayList <Persona> ();
@@ -124,7 +137,7 @@ public class Examen {
         }
         System.out.println();
        System.out.println("Ordenado por nombre (utilizando Comparator)");
-        Set <Persona> ss = new TreeSet<Persona>(new OrdenarPorNombre());
+        SortedSet <Persona> ss = new TreeSet<Persona>(new OrdenarPorNombre());
         i = personas.iterator();
         while (i.hasNext()){
             Persona p = i.next();
@@ -296,6 +309,7 @@ public class Examen {
          //System.out.println(x.getPalabra()+"\t"+x.getNumero()+"\t"+x.getCaracter());
       //x.crearFichero ();
          
+         // ENTRADA Y SALIDA
          
       /*    //CREAR FICHEROS Y DIRECTORIOS
        String separador = System.getProperty("file.separator");
@@ -336,9 +350,8 @@ public class Examen {
        // catch (FileNotFoundException e) {};
         
              
-           
         
-            // SENTRADA OBJETOS
+            // ENTRADA OBJETOS
         
         List <Persona> fulanitos = new ArrayList <Persona>();
              ObjectInputStream entrada =null;
@@ -381,7 +394,7 @@ public class Examen {
        
          */  //  E/S   crear ficheros y ficheros de objetos
          
-         
+            
          
          /*  // E/S  con texto
          
@@ -401,6 +414,9 @@ public class Examen {
              pw.close();
          }
          catch (IOException e){;}
+         
+         
+         
          
          BufferedReader br =null;
          FileReader fr = null;
@@ -428,6 +444,8 @@ public class Examen {
          
          * 
          */  //E/S  con texto
+         
+        
       
          /*  //leer desde consola
          try{
@@ -468,15 +486,6 @@ public class Examen {
          
          * */ //  randomaccessfile
          
-        /* //ligadura dinamica
-         Padre padre = new Hija();
-         padre.uno();
-         padre.dos();
-         padre.cuatro();
-         Hija hija = (Hija)padre;
-         hija.tres();
-         * 
-         * */ //ligadura dinamica
          
        /*  //ficheros de datos 
          
@@ -508,7 +517,7 @@ public class Examen {
           dis.close();
           
           */ // ficheros de datos
-         
+         /*
          // tokens  
            File path = new File("D:"+System.getProperty("file.separator")+"tokens.txt");
          path.createNewFile();
@@ -550,5 +559,53 @@ while(tokenizer.nextToken() != StreamTokenizer.TT_EOF){
     }
 
 }
+
+BufferedInputStream bis = new BufferedInputStream(new FileInputStream(path));
+BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(path));
+FileInputStream fis = new FileInputStream(path);
+FileOutputStream fos = new FileOutputStream(path);
+*/
+
+         Alumno a1=new Alumno();
+         Profesor p1=new Profesor();
+         System.out.println(Algoritmos.estanEnElMismoCentro(a1, p1));
+         
+       /*  
+          String separador=System.getProperty("file.separator");
+          File path = new File("D:"+separador+"personas.txt");
+          
+          // OBJETOS
+          ObjectOutputStream oos = new ObjectOutputStream (new FileOutputStream(path));
+          ObjectInputStream ois =new ObjectInputStream (new FileInputStream(path));
+          
+          
+            
+          // TEXTO
+          PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path)));
+          BufferedReader br =new BufferedReader (new FileReader(path));
+          
+          BufferedWriter bw =new BufferedWriter(new FileWriter(path));
+          
+         
+          // DATOS
+          DataOutputStream dos = new DataOutputStream(new BufferedOutputStream (new FileOutputStream(path)));
+          DataInputStream dis = new DataInputStream( new BufferedInputStream(new FileInputStream(path)));
+          
+               
+               
+          // Tiene menos métodos
+          BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(path));
+          BufferedInputStream bis = new BufferedInputStream(new FileInputStream(path));
+          
+          */
+         
+         
+          System.out.println("POLIMORFISMO");
+          Padre p = new Hija();
+          Hija h = new Hija();
+         
+          
+          
+
     }// metodo main
 }// class Examen

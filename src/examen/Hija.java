@@ -18,12 +18,22 @@ public class Hija extends Padre{
      public void uno (){
          System.out.println("uno.hija");
      }
+     
+     public String uno(int a) {
+         return "uno.hija"    ;
+     }
     
-    public void dos (){
-        System.out.println("dos.hija");
+    public String dos (int a){
+        return "dos.hija(a)";
     }
     
+    public String dos (int a, int b){
+        return "dos.hija(a,b)";
+    }
+    
+    
      public void tres (){
+         
         System.out.println("tres.hija");
     }
      

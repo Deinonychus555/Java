@@ -10,15 +10,30 @@ import java.io.Serializable;
  *
  * @author Juanan
  */
-public class Alumno extends Persona {
+public class Alumno extends Persona implements EstaEnUnCentro {
     private String estudia;
     private Vocacion vocacion;
+    private String centro;
+    
+    
+    public Alumno(){
+        centro="Salzillo";
+    }
     
     public Alumno (String nombre, int edad,String carrera){
         super(nombre,edad);
         estudia=carrera;
         vocacion=aspira("empresario");
     }
+    
+    public Alumno (String nombre, int edad,String carrera,String centro){
+        super(nombre,edad);
+        estudia=carrera;
+        vocacion=aspira("empresario");
+        this.centro= centro;
+    }
+    
+    
 
     public class Vocacion implements Serializable{
     private String vocacion;
@@ -60,6 +75,10 @@ public Vocacion aspira (String vocacion){
         serVivo();
         ocupacion();
         universidad();
+    }
+    
+    public String centroEnElQueEstoy(){
+        return centro;
     }
     
 }
